@@ -468,6 +468,7 @@ create_prefs (void)
     GtkWidget *cancelbutton1;
     GtkWidget *okbutton1;
     GtkWidget *eject_on_done;
+    GtkWidget *enable_speedrip;
     GtkTooltip *tooltips;
     GtkWidget* hboxFill;
     
@@ -518,6 +519,10 @@ create_prefs (void)
     gtk_widget_set_tooltip_text( cdrom, _("Default: /dev/cdrom\n"
                                               "Other example: /dev/hdc\n"
                                               "Other example: /dev/sr0"));
+
+    enable_speedrip = gtk_check_button_new_with_mnemonic (_("Enable full speedrip"));
+    gtk_widget_show (enable_speedrip);
+    gtk_box_pack_start (GTK_BOX (vbox), enable_speedrip, FALSE, FALSE, 5);
     
     eject_on_done = gtk_check_button_new_with_mnemonic (_("Eject disc when finished"));
     gtk_widget_show (eject_on_done);
@@ -531,6 +536,10 @@ create_prefs (void)
     gtk_widget_show (label);
     gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebook1), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebook1), 0), label);
     /* END GENERAL tab */
+
+    g_signal_connect ((gpointer) enable_speedrip, "toggled",
+                                        G_CALLBACK (on_enable_speedrip_toggled),
+                                        NULL);
     
     /* FILENAMES tab */
     vbox2 = gtk_vbox_new (FALSE, 5);
@@ -1304,6 +1313,7 @@ create_prefs (void)
     GLADE_HOOKUP_OBJECT (prefs, make_playlist, "make_playlist");
     GLADE_HOOKUP_OBJECT (prefs, cdrom, "cdrom");
     GLADE_HOOKUP_OBJECT (prefs, eject_on_done, "eject_on_done");
+    GLADE_HOOKUP_OBJECT (prefs, enable_speedrip, "enable_speedrip");
     GLADE_HOOKUP_OBJECT (prefs, format_music, "format_music");
     GLADE_HOOKUP_OBJECT (prefs, format_albumdir, "format_albumdir");
     GLADE_HOOKUP_OBJECT (prefs, format_playlist, "format_playlist");

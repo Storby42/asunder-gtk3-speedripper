@@ -72,7 +72,9 @@ POTFILES = \
 	../src/support.c \
 	../src/threads.c \
 	../src/util.c \
-	../src/wrappers.c
+	../src/wrappers.c \
+	../src/upload.c
+
 CATALOGS=$(shell LINGUAS="$(USE_LINGUAS)"; for lang in $$LINGUAS; do printf "$$lang.gmo "; done)
 
 .SUFFIXES:

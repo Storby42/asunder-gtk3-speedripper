@@ -1100,6 +1100,20 @@ on_rip_header_click                 (GtkTreeViewColumn *treeviewcolumn,
 }
 
 void
+on_enable_speedrip_toggled               (GtkToggleButton *togglebutton,
+                                        gpointer         user_data)
+{
+    //GtkWidget * artistCol = gtk_tree_view_get_column(GTK_TREE_VIEW(glb_tracklist),
+    //        COL_TRACKARTIST ); //lnr
+    //gtk_tree_view_column_set_visible(artistCol,
+    //        !gtk_toggle_button_get_active(togglebutton));
+    gtk_widget_set_sensitive(lookup_widget(win_prefs, "eject_on_done"), !gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(togglebutton)));
+    if (gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(togglebutton)))
+        gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(lookup_widget(win_prefs, "eject_on_done")), TRUE);
+    fprintf(stderr, "test thing");
+}
+
+void
 on_window_close                        (GtkWidget       *widget,
                                         GdkEventFocus   *event,
                                         gpointer         user_data)

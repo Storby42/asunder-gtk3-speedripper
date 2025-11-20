@@ -21,6 +21,7 @@ typedef struct _prefs
     int main_window_width;
     int main_window_height;
     int eject_on_done;
+    int enable_speedrip;
     int do_cddb_updates;
     int use_proxy;
     char* server_name;

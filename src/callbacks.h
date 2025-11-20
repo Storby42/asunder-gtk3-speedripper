@@ -213,3 +213,7 @@ void
 on_window_close	                       (GtkWidget       *widget,
                                         GdkEventFocus   *event,
                                         gpointer         user_data);
+
+void
+on_enable_speedrip_toggled               (GtkToggleButton *togglebutton,
+                                        gpointer         user_data);

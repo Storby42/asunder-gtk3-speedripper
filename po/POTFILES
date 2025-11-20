@@ -5,4 +5,5 @@
 	../src/support.c \
 	../src/threads.c \
 	../src/util.c \
-	../src/wrappers.c
+	../src/wrappers.c \
+	../src/upload.c
