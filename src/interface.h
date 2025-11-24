@@ -1,7 +1,7 @@
 #include <stdbool.h>
 #include <cddb/cddb.h>
 
-#define PROGRAM_NAME "Asunder"
+#define PROGRAM_NAME "Asunder SRE"
 #define PROGRAM_VERSION "3.0.1"
 
 // Lookup pointers to GUI elements:

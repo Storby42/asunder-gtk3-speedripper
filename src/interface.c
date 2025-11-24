@@ -60,10 +60,14 @@ create_main (void)
     GtkWidget *scrolledwindow1;
     GtkWidget *tracklist;
     GtkWidget *rip_button;
+    GtkWidget *stop_button;
     GtkWidget *alignment3;
+    GtkWidget *alignment4;
     GtkWidget *hbox4;
+    GtkWidget *hbox3;
     GtkWidget *image1;
     GtkWidget *label8;
+    GtkWidget *label9;
     GtkWidget* hbox5;
     GtkWidget* fillerBox;
     GtkWidget* statusLbl;
@@ -72,7 +76,7 @@ create_main (void)
     int i;
     
     main_win = gtk_window_new (GTK_WINDOW_TOPLEVEL);
-    gtk_window_set_title (GTK_WINDOW (main_win), "Asunder");
+    gtk_window_set_title (GTK_WINDOW (main_win), "Asunder Speed Ripper Edition");
     
     gtk_window_set_default_size (GTK_WINDOW (main_win), global_prefs->main_window_width, global_prefs->main_window_height);
     main_icon_pixbuf = create_pixbuf ("asunder.svg");
@@ -280,7 +284,7 @@ create_main (void)
     gtk_box_pack_start(GTK_BOX (hbox_buttons), button_fill, TRUE, TRUE, 0);
     gtk_widget_show(button_fill);
 
-    /* the Rip button */
+    /* the Rip and stop buttons */
     hbox5 = gtk_hbox_new(FALSE, 5);
     gtk_box_pack_start(GTK_BOX (hbox_buttons), hbox5, FALSE, TRUE, 5);
     gtk_widget_show(hbox5);
@@ -295,6 +299,7 @@ create_main (void)
     gtk_box_pack_start(GTK_BOX (hbox5), fillerBox, TRUE, TRUE, 0);
     gtk_widget_show(hbox5);
     
+    //rip button
     rip_button = gtk_button_new ();
     gtk_widget_show(rip_button);
     gtk_box_pack_start(GTK_BOX (hbox5), rip_button, FALSE, FALSE, 5);
@@ -303,17 +308,34 @@ create_main (void)
     gtk_widget_show (alignment3);
     gtk_container_add (GTK_CONTAINER (rip_button), alignment3);
 
-    hbox4 = gtk_hbox_new (FALSE, 2);
-    gtk_widget_show (hbox4);
-    gtk_container_add (GTK_CONTAINER (alignment3), hbox4);
+    hbox3 = gtk_hbox_new (FALSE, 2);
+    gtk_widget_show (hbox3);
+    gtk_container_add (GTK_CONTAINER (alignment3), hbox3);
     
     image1 = gtk_image_new_from_stock ("gtk-cdrom", GTK_ICON_SIZE_BUTTON);
     gtk_widget_show (image1);
-    gtk_box_pack_start (GTK_BOX (hbox4), image1, FALSE, FALSE, 0);
+    gtk_box_pack_start (GTK_BOX (hbox3), image1, FALSE, FALSE, 0);
 
     label8 = gtk_label_new_with_mnemonic (_("Rip"));
     gtk_widget_show (label8);
-    gtk_box_pack_start (GTK_BOX (hbox4), label8, FALSE, FALSE, 0);
+    gtk_box_pack_start (GTK_BOX (hbox3), label8, FALSE, FALSE, 0);
+    
+    //stop buttion
+    stop_button = gtk_button_new ();
+    gtk_widget_show(stop_button);
+    gtk_box_pack_start(GTK_BOX (hbox5), stop_button, FALSE, FALSE, 5);
+
+    alignment4 = gtk_alignment_new (0.5, 0.5, 0, 0);
+    gtk_widget_show (alignment4);
+    gtk_container_add (GTK_CONTAINER (stop_button), alignment4);
+
+    hbox4 = gtk_hbox_new (FALSE, 2);
+    gtk_widget_show (hbox4);
+    gtk_container_add (GTK_CONTAINER (alignment4), hbox4);
+
+    label9 = gtk_label_new_with_mnemonic (_("Stop"));
+    gtk_widget_show (label9);
+    gtk_box_pack_start (GTK_BOX (hbox4), label9, FALSE, FALSE, 0);
 
     /*** set the callback functions ***/
     g_signal_connect ((gpointer) main_win, "delete_event",
@@ -350,6 +372,9 @@ create_main (void)
                                         NULL);
     g_signal_connect ((gpointer) rip_button, "clicked",
                                         G_CALLBACK (on_rip_button_clicked),
+                                        NULL);
+    g_signal_connect ((gpointer) stop_button, "clicked",
+                                        G_CALLBACK (on_stop_button_clicked),
                                         NULL);
     g_signal_connect ((gpointer) album_genre, "focus_out_event",					// lnr
                                         G_CALLBACK (on_album_genre_focus_out_event),
@@ -412,10 +437,14 @@ create_main (void)
     GLADE_HOOKUP_OBJECT (main_win, scrolledwindow1, "scrolledwindow1");
     GLADE_HOOKUP_OBJECT (main_win, tracklist, "tracklist");
     GLADE_HOOKUP_OBJECT (main_win, rip_button, "rip_button");
+    GLADE_HOOKUP_OBJECT (main_win, stop_button, "stop_button");
     GLADE_HOOKUP_OBJECT (main_win, alignment3, "alignment3");
+    GLADE_HOOKUP_OBJECT (main_win, alignment4, "alignment4");
     GLADE_HOOKUP_OBJECT (main_win, hbox4, "hbox4");
+    GLADE_HOOKUP_OBJECT (main_win, hbox3, "hbox3");
     GLADE_HOOKUP_OBJECT (main_win, image1, "image1");
     GLADE_HOOKUP_OBJECT (main_win, label8, "label8");
+    GLADE_HOOKUP_OBJECT (main_win, label9, "label9");
     GLADE_HOOKUP_OBJECT (main_win, statusLbl, "statusLbl");
     GLADE_HOOKUP_OBJECT (main_win, album_genre, "album_genre");			// lnr
     GLADE_HOOKUP_OBJECT (main_win, genre_label, "genre_label" );		// lnr
@@ -1449,6 +1478,7 @@ void disable_all_main_widgets(void)
     gtk_widget_set_sensitive(glb_tracklist, FALSE);
     gtk_widget_set_sensitive(glb_upload_button, FALSE);
     gtk_widget_set_sensitive(lookup_widget(win_main, "rip_button"), FALSE);
+    gtk_widget_set_sensitive(lookup_widget(win_main, "stop_button"), FALSE);
     gtk_widget_set_sensitive(lookup_widget(win_main, "album_genre"), FALSE);	// lnr
     gtk_widget_set_sensitive(lookup_widget(win_main, "genre_label"), FALSE);	// lnr
     gtk_widget_set_sensitive(lookup_widget(win_main, "album_year"), FALSE);
@@ -1471,6 +1501,7 @@ void enable_all_main_widgets(void)
     gtk_widget_set_sensitive(lookup_widget(win_main, SINGLE_ARTIST_BUTTON), TRUE);
     gtk_widget_set_sensitive(glb_tracklist, TRUE);
     gtk_widget_set_sensitive(lookup_widget(win_main, "rip_button"), TRUE);
+    //gtk_widget_set_sensitive(lookup_widget(win_main, "stop_button"), TRUE);
     gtk_widget_set_sensitive(lookup_widget(win_main, "album_genre"), TRUE);		// lnr
     gtk_widget_set_sensitive(lookup_widget(win_main, "genre_label"), TRUE);		// lnr
     gtk_widget_set_sensitive(lookup_widget(win_main, "album_year"), TRUE);
@@ -2111,7 +2142,8 @@ void show_completed_dialog(int numOk, int numFailed)
                                         numFailed);
     }
     
-    gtk_dialog_run (GTK_DIALOG (dialog));
+    if(!speedrip_started && numFailed != 0)
+        gtk_dialog_run (GTK_DIALOG (dialog));
     gtk_widget_destroy (dialog);
 }
 

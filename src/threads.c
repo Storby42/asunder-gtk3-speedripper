@@ -114,7 +114,7 @@ void abort_threads()
     g_thread_join(tracker);
     debugLog("Aborting: 4 (All threads joined)\n");
     
-    gtk_window_set_title(GTK_WINDOW(win_main), "Asunder");
+    gtk_window_set_title(GTK_WINDOW(win_main), "Asunder SRE");
     
     gtk_widget_hide(win_ripping);
     gdk_flush();
@@ -1315,7 +1315,7 @@ gpointer track(gpointer data)
     char sencode[13];
     double ptotal;
     char stotal[5];
-    char windowTitle[15]; /* "Asunder - 100%" */
+    char windowTitle[15]; /* "Asunder SRE - 100%" */
     int looper = 0;
     
     while (!allDone)
@@ -1345,7 +1345,7 @@ gpointer track(gpointer data)
         }
         snprintf(stotal, 5, "%d%%", (int)(ptotal*100));
         
-        strcpy(windowTitle, "Asunder - ");
+        strcpy(windowTitle, "Asunder SRE - ");
         strcat(windowTitle, stotal);
         
         if (aborted) g_thread_exit(NULL);
@@ -1381,7 +1381,7 @@ gpointer track(gpointer data)
     }
     
     gdk_threads_enter();
-        gtk_window_set_title(GTK_WINDOW(win_main), "Asunder");
+        gtk_window_set_title(GTK_WINDOW(win_main), "Asunder SRE");
     gdk_threads_leave();
     
     return NULL;

@@ -739,8 +739,37 @@ on_rip_button_clicked                  (GtkButton       *button,
         gtk_widget_destroy(dialog);
         return;
     }
+
+    speedrip_started = global_prefs->eject_on_done;
+    gtk_widget_set_sensitive(lookup_widget(win_main, "stop_button"), speedrip_started);
+    if(speedrip_started)
+        fprintf(stderr, "Ripping with speedripper enabled for next disk \n");
     
     dorip();
+}
+
+void
+on_stop_button_clicked                  (GtkButton       *button,
+                                        gpointer         user_data)
+{
+    /*
+    GtkListStore * store = GTK_LIST_STORE(gtk_tree_view_get_model(GTK_TREE_VIEW(lookup_widget(win_main, "tracklist"))));
+    if (store == NULL)
+    {
+        GtkWidget * dialog;
+        dialog = gtk_message_dialog_new(GTK_WINDOW(win_main), 
+                                        GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_ERROR, GTK_BUTTONS_OK, 
+                                        _("No CD is inserted. Please insert a CD into the CD-ROM drive."));
+        gtk_dialog_run(GTK_DIALOG(dialog));
+        gtk_widget_destroy(dialog);
+        return;
+    }
+    
+    dorip();
+    */
+    speedrip_started = 0;
+    gtk_widget_set_sensitive(lookup_widget(win_main, "stop_button"), speedrip_started);
+    fprintf(stderr, "stopped speedripper \n");
 }
 
 void
@@ -1103,14 +1132,10 @@ void
 on_enable_speedrip_toggled               (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
-    //GtkWidget * artistCol = gtk_tree_view_get_column(GTK_TREE_VIEW(glb_tracklist),
-    //        COL_TRACKARTIST ); //lnr
-    //gtk_tree_view_column_set_visible(artistCol,
-    //        !gtk_toggle_button_get_active(togglebutton));
     gtk_widget_set_sensitive(lookup_widget(win_prefs, "eject_on_done"), !gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(togglebutton)));
     if (gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(togglebutton)))
         gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(lookup_widget(win_prefs, "eject_on_done")), TRUE);
-    fprintf(stderr, "test thing");
+    fprintf(stderr, "toggled speedripper \n");
 }
 
 void

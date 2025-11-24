@@ -433,10 +433,10 @@ Copyright (C) 2023 Free Software Foundation, Inc.
 This config.status script is free software; the Free Software Foundation
 gives unlimited permission to copy, distribute and modify it."
 
-ac_pwd='/root/Desktop/asunder-3.1.0-gtk3'
+ac_pwd='/home/storby/Documents/GitHub/asunder-gtk3-speedripper'
 srcdir='.'
-INSTALL='/bin/ginstall -c'
-MKDIR_P='/bin/mkdir -p'
+INSTALL='/usr/bin/install -c'
+MKDIR_P='/usr/bin/mkdir -p'
 AWK='gawk'
 test -n "$AWK" || AWK=awk
 # The default lists apply if the user does not specify any file.
@@ -633,18 +633,17 @@ S["CATALOGS"]=""
 S["MSGFMT_OPTS"]="-c"
 S["INTL_MACOSX_LIBS"]=""
 S["GETTEXT_PACKAGE"]="asunder"
-S["PACKAGE_LIBS"]="-lgtk-3 -lgdk-3 -lz -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -latk-1.0 -lcairo-gobject -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lgthread-2.0"\
+S["PACKAGE_LIBS"]="-lgtk-3 -lgdk-3 -lz -lpangocairo-1.0 -lcairo-gobject -lgdk_pixbuf-2.0 -latk-1.0 -lpango-1.0 -lcairo -lharfbuzz -lgio-2.0 -lgobject-2.0 -lgthread-2.0"\
 " -pthread -lglib-2.0 -lcddb"
-S["PACKAGE_CFLAGS"]="-pthread -I/usr/include/gtk-3.0 -I/usr/include/at-spi2-atk/2.0 -I/usr/include/at-spi-2.0 -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include -I/us"\
-"r/include/gtk-3.0 -I/usr/include/gio-unix-2.0 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/pango-1.0 -I/usr/include/fribidi -I/us"\
-"r/include/atk-1.0 -I/usr/include/cairo -I/usr/include/libxml2 -I/usr/include/freetype2 -I/usr/include/harfbuzz -I/usr/include/pixman-1 -I/usr/includ"\
-"e/gdk-pixbuf-2.0 -I/usr/include/libpng16 -I/usr/include/webp -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/glib-2.0 -I/usr/lib64/glib-"\
-"2.0/include"
+S["PACKAGE_CFLAGS"]="-I/usr/include/gtk-3.0 -I/usr/include/pango-1.0 -I/usr/include/cloudproviders -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/glyc"\
+"in-2 -I/usr/include/at-spi2-atk/2.0 -I/usr/include/at-spi-2.0 -I/usr/include/atk-1.0 -I/usr/include/dbus-1.0 -I/usr/lib/dbus-1.0/include -I/usr/incl"\
+"ude/fribidi -I/usr/include/pixman-1 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/gio-unix-2.0 -I/usr/incl"\
+"ude/libmount -I/usr/include/blkid -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/sysprof-6 -pthread"
 S["PKG_CONFIG_LIBDIR"]=""
 S["PKG_CONFIG_PATH"]="/usr/lib/pkgconfig:"
 S["PKG_CONFIG"]="/usr/bin/pkg-config"
-S["EGREP"]="/usr/bin/overrides/grep -E"
-S["GREP"]="/usr/bin/overrides/grep"
+S["EGREP"]="/usr/bin/grep -E"
+S["GREP"]="/usr/bin/grep"
 S["am__fastdepCC_FALSE"]="#"
 S["am__fastdepCC_TRUE"]=""
 S["CCDEPMODE"]="depmode=gcc3"
@@ -733,15 +732,15 @@ S["am__leading_dot"]="."
 S["SET_MAKE"]=""
 S["AWK"]="gawk"
 S["mkdir_p"]="$(MKDIR_P)"
-S["MKDIR_P"]="/bin/mkdir -p"
+S["MKDIR_P"]="/usr/bin/mkdir -p"
 S["INSTALL_STRIP_PROGRAM"]="$(install_sh) -c -s"
 S["STRIP"]=""
-S["install_sh"]="${SHELL} /root/Desktop/asunder-3.1.0-gtk3/install-sh"
-S["MAKEINFO"]="${SHELL} '/root/Desktop/asunder-3.1.0-gtk3/missing' makeinfo"
-S["AUTOHEADER"]="${SHELL} '/root/Desktop/asunder-3.1.0-gtk3/missing' autoheader"
-S["AUTOMAKE"]="${SHELL} '/root/Desktop/asunder-3.1.0-gtk3/missing' automake-1.16"
-S["AUTOCONF"]="${SHELL} '/root/Desktop/asunder-3.1.0-gtk3/missing' autoconf"
-S["ACLOCAL"]="${SHELL} '/root/Desktop/asunder-3.1.0-gtk3/missing' aclocal-1.16"
+S["install_sh"]="${SHELL} /home/storby/Documents/GitHub/asunder-gtk3-speedripper/install-sh"
+S["MAKEINFO"]="${SHELL} '/home/storby/Documents/GitHub/asunder-gtk3-speedripper/missing' makeinfo"
+S["AUTOHEADER"]="${SHELL} '/home/storby/Documents/GitHub/asunder-gtk3-speedripper/missing' autoheader"
+S["AUTOMAKE"]="${SHELL} '/home/storby/Documents/GitHub/asunder-gtk3-speedripper/missing' automake-1.16"
+S["AUTOCONF"]="${SHELL} '/home/storby/Documents/GitHub/asunder-gtk3-speedripper/missing' autoconf"
+S["ACLOCAL"]="${SHELL} '/home/storby/Documents/GitHub/asunder-gtk3-speedripper/missing' aclocal-1.16"
 S["VERSION"]="3.0.1"
 S["PACKAGE"]="asunder"
 S["CYGPATH_W"]="echo"

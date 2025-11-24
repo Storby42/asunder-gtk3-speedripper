@@ -46,6 +46,9 @@ Foundation; version 2 of the licence.
 #include "wrappers.h"
 #include "threads.h"
 
+bool speedrip_started = 0;
+//most convenient place to put this I guess
+
 static unsigned int current_disc_id = 0;
 
 GList * gbl_disc_matches = NULL;
@@ -204,6 +207,7 @@ int main(int argc, char *argv[])
     gtk_widget_set_sensitive(lookup_widget(win_main, ALBUM_CATEGORY_COMBO_BOX), FALSE);
     gtk_widget_set_sensitive(glb_upload_button, FALSE);
     gtk_widget_set_sensitive(lookup_widget(win_main, "rip_button"), FALSE);
+    gtk_widget_set_sensitive(lookup_widget(win_main, "stop_button"), FALSE);
     
     win_ripping = create_ripping();
 //    win_upload = create_upload_check();
@@ -946,6 +950,7 @@ void update_tracklist(cddb_disc_t * disc)
     g_free (disc_artist);
     g_free (disc_title);
     g_free (disc_genre);
+
 }
 
 
@@ -988,7 +993,7 @@ void refresh_thread_body(char * cdrom, int force)
             
             gdk_threads_enter();
             gtk_widget_set_sensitive(lookup_widget(win_main, "rip_button"), TRUE);
-        
+            
             // show the temporary info
             gtk_entry_set_text(glb_album_artist, EMPTY_ARTIST_SHOWN);
             gtk_entry_set_text(glb_album_title, EMPTY_ALBUM_SHOWN);
@@ -1067,6 +1072,10 @@ void refresh_thread_body(char * cdrom, int force)
         	glb_selected_disc_clone_from(found_disc);
         }
         gdk_threads_leave();
+        if(speedrip_started)
+            {
+                on_rip_button_clicked(GTK_BUTTON(lookup_widget(win_main, "rip_button")), NULL);
+            }
     }
 }
 

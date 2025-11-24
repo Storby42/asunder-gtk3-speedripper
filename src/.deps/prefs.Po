@@ -43,7 +43,7 @@ prefs.o: prefs.c /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/bits/getopt_posix.h /usr/include/bits/getopt_core.h \
  /usr/include/bits/unistd_ext.h /usr/include/glib-2.0/glib.h \
  /usr/include/glib-2.0/glib/galloca.h /usr/include/glib-2.0/glib/gtypes.h \
- /usr/lib64/glib-2.0/include/glibconfig.h \
+ /usr/lib/glib-2.0/include/glibconfig.h \
  /usr/include/glib-2.0/glib/gmacros.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/limits.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/syslimits.h \
@@ -781,7 +781,7 @@ prefs.o: prefs.c /usr/include/stdc-predef.h /usr/include/stdio.h \
 /usr/include/glib-2.0/glib.h:
 /usr/include/glib-2.0/glib/galloca.h:
 /usr/include/glib-2.0/glib/gtypes.h:
-/usr/lib64/glib-2.0/include/glibconfig.h:
+/usr/lib/glib-2.0/include/glibconfig.h:
 /usr/include/glib-2.0/glib/gmacros.h:
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/limits.h:
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/syslimits.h:

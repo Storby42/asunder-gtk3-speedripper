@@ -154,6 +154,11 @@ on_rip_button_clicked                  (GtkButton       *button,
                                         gpointer         user_data);
 
 void
+on_stop_button_clicked                  (GtkButton       *button,
+                                        gpointer         user_data);
+
+
+void
 on_single_artist_toggled               (GtkToggleButton *togglebutton,
                                         gpointer         user_data);
 

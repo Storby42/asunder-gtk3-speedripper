@@ -167,13 +167,13 @@ am__define_uniq_tagged_files = \
 am__DIST_COMMON = $(srcdir)/Makefile.in $(top_srcdir)/depcomp \
 	$(top_srcdir)/mkinstalldirs
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} '/root/Desktop/asunder-3.1.0-gtk3/missing' aclocal-1.16
+ACLOCAL = ${SHELL} '/home/storby/Documents/GitHub/asunder-gtk3-speedripper/missing' aclocal-1.16
 ALL_LINGUAS = 
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 1
-AUTOCONF = ${SHELL} '/root/Desktop/asunder-3.1.0-gtk3/missing' autoconf
-AUTOHEADER = ${SHELL} '/root/Desktop/asunder-3.1.0-gtk3/missing' autoheader
-AUTOMAKE = ${SHELL} '/root/Desktop/asunder-3.1.0-gtk3/missing' automake-1.16
+AUTOCONF = ${SHELL} '/home/storby/Documents/GitHub/asunder-gtk3-speedripper/missing' autoconf
+AUTOHEADER = ${SHELL} '/home/storby/Documents/GitHub/asunder-gtk3-speedripper/missing' autoheader
+AUTOMAKE = ${SHELL} '/home/storby/Documents/GitHub/asunder-gtk3-speedripper/missing' automake-1.16
 AWK = gawk
 CATALOGS = 
 CATOBJEXT = .gmo
@@ -190,14 +190,14 @@ DEPDIR = .deps
 ECHO_C = 
 ECHO_N = -n
 ECHO_T = 
-EGREP = /usr/bin/overrides/grep -E
+EGREP = /usr/bin/grep -E
 ETAGS = etags
 EXEEXT = 
 GETTEXT_PACKAGE = asunder
 GMOFILES = 
 GMSGFMT = /usr/bin/msgfmt
-GREP = /usr/bin/overrides/grep
-INSTALL = /bin/ginstall -c
+GREP = /usr/bin/grep
+INSTALL = /usr/bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
@@ -218,8 +218,8 @@ LIBOBJS =
 LIBS = 
 LTLIBOBJS = 
 MAINT = #
-MAKEINFO = ${SHELL} '/root/Desktop/asunder-3.1.0-gtk3/missing' makeinfo
-MKDIR_P = /bin/mkdir -p
+MAKEINFO = ${SHELL} '/home/storby/Documents/GitHub/asunder-gtk3-speedripper/missing' makeinfo
+MKDIR_P = /usr/bin/mkdir -p
 MKINSTALLDIRS = .//mkinstalldirs
 MSGFMT = /usr/bin/msgfmt
 MSGFMT_OPTS = -c
@@ -227,8 +227,8 @@ MSGMERGE = /usr/bin/msgmerge
 OBJEXT = o
 PACKAGE = asunder
 PACKAGE_BUGREPORT = 
-PACKAGE_CFLAGS = -pthread -I/usr/include/gtk-3.0 -I/usr/include/at-spi2-atk/2.0 -I/usr/include/at-spi-2.0 -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include -I/usr/include/gtk-3.0 -I/usr/include/gio-unix-2.0 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/pango-1.0 -I/usr/include/fribidi -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/libxml2 -I/usr/include/freetype2 -I/usr/include/harfbuzz -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libpng16 -I/usr/include/webp -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include
-PACKAGE_LIBS = -lgtk-3 -lgdk-3 -lz -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -latk-1.0 -lcairo-gobject -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lgthread-2.0 -pthread -lglib-2.0 -lcddb
+PACKAGE_CFLAGS = -I/usr/include/gtk-3.0 -I/usr/include/pango-1.0 -I/usr/include/cloudproviders -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/glycin-2 -I/usr/include/at-spi2-atk/2.0 -I/usr/include/at-spi-2.0 -I/usr/include/atk-1.0 -I/usr/include/dbus-1.0 -I/usr/lib/dbus-1.0/include -I/usr/include/fribidi -I/usr/include/pixman-1 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/gio-unix-2.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/sysprof-6 -pthread
+PACKAGE_LIBS = -lgtk-3 -lgdk-3 -lz -lpangocairo-1.0 -lcairo-gobject -lgdk_pixbuf-2.0 -latk-1.0 -lpango-1.0 -lcairo -lharfbuzz -lgio-2.0 -lgobject-2.0 -lgthread-2.0 -pthread -lglib-2.0 -lcddb
 PACKAGE_NAME = 
 PACKAGE_STRING = 
 PACKAGE_TARNAME = 
@@ -248,10 +248,10 @@ STRIP =
 USE_NLS = yes
 VERSION = 3.0.1
 XGETTEXT = /usr/bin/xgettext
-abs_builddir = /root/Desktop/asunder-3.1.0-gtk3/src
-abs_srcdir = /root/Desktop/asunder-3.1.0-gtk3/src
-abs_top_builddir = /root/Desktop/asunder-3.1.0-gtk3
-abs_top_srcdir = /root/Desktop/asunder-3.1.0-gtk3
+abs_builddir = /home/storby/Documents/GitHub/asunder-gtk3-speedripper/src
+abs_srcdir = /home/storby/Documents/GitHub/asunder-gtk3-speedripper/src
+abs_top_builddir = /home/storby/Documents/GitHub/asunder-gtk3-speedripper
+abs_top_srcdir = /home/storby/Documents/GitHub/asunder-gtk3-speedripper
 ac_ct_CC = gcc
 am__include = include
 am__leading_dot = .
@@ -270,7 +270,7 @@ host_alias =
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /root/Desktop/asunder-3.1.0-gtk3/install-sh
+install_sh = ${SHELL} /home/storby/Documents/GitHub/asunder-gtk3-speedripper/install-sh
 intltool__v_merge_options_ = $(intltool__v_merge_options_$(AM_DEFAULT_VERBOSITY))
 intltool__v_merge_options_0 = -q
 libdir = ${exec_prefix}/lib
@@ -296,7 +296,7 @@ top_srcdir = ..
 INCLUDES = \
 	-DPACKAGE_DATA_DIR=\""$(datadir)"\" \
 	-DPACKAGE_LOCALE_DIR=\""$(prefix)/$(DATADIRNAME)/locale"\" \
-	-pthread -I/usr/include/gtk-3.0 -I/usr/include/at-spi2-atk/2.0 -I/usr/include/at-spi-2.0 -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include -I/usr/include/gtk-3.0 -I/usr/include/gio-unix-2.0 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/pango-1.0 -I/usr/include/fribidi -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/libxml2 -I/usr/include/freetype2 -I/usr/include/harfbuzz -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libpng16 -I/usr/include/webp -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include
+	-I/usr/include/gtk-3.0 -I/usr/include/pango-1.0 -I/usr/include/cloudproviders -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/glycin-2 -I/usr/include/at-spi2-atk/2.0 -I/usr/include/at-spi-2.0 -I/usr/include/atk-1.0 -I/usr/include/dbus-1.0 -I/usr/lib/dbus-1.0/include -I/usr/include/fribidi -I/usr/include/pixman-1 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/gio-unix-2.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/sysprof-6 -pthread
 
 asunder_SOURCES = \
 	main.c main.h \
@@ -311,7 +311,7 @@ asunder_SOURCES = \
 	wrappers.c wrappers.h \
 	completion.c completion.h
 
-asunder_LDADD = -lgtk-3 -lgdk-3 -lz -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -latk-1.0 -lcairo-gobject -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lgthread-2.0 -pthread -lglib-2.0 -lcddb $(INTLLIBS)
+asunder_LDADD = -lgtk-3 -lgdk-3 -lz -lpangocairo-1.0 -lcairo-gobject -lgdk_pixbuf-2.0 -latk-1.0 -lpango-1.0 -lcairo -lharfbuzz -lgio-2.0 -lgobject-2.0 -lgthread-2.0 -pthread -lglib-2.0 -lcddb $(INTLLIBS)
 all: all-am
 
 .SUFFIXES:

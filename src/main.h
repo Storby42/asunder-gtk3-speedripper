@@ -17,6 +17,9 @@ enum
     NUM_COLS
 };
 
+extern bool speedrip_started;
+//make speedrip_started visible to callbacks.c
+
 // creates a tree model that represents the data in the cddb_disc_t
 GtkTreeModel * create_model_from_disc(cddb_disc_t * disc);
 

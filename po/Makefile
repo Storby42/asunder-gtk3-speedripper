@@ -35,12 +35,12 @@ datarootdir = ${prefix}/share
 libdir = ${exec_prefix}/lib
 localedir = ${datarootdir}/locale
 subdir = po
-install_sh = ${SHELL} /root/Desktop/asunder-3.1.0-gtk3/install-sh
+install_sh = ${SHELL} /home/storby/Documents/GitHub/asunder-gtk3-speedripper/install-sh
 # Automake >= 1.8 provides $(MKDIR_P).
 # Until it can be supposed, use the safe fallback:
 mkdir_p = $(install_sh) -d
 
-INSTALL = /bin/ginstall -c
+INSTALL = /usr/bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
 
 GMSGFMT = /usr/bin/msgfmt
